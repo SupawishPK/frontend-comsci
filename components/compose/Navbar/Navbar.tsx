@@ -7,11 +7,9 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
-  { name: 'about me', href: '#', current: false },
+  { name: 'หน้าหลัก', href: '#', current: true },
+  { name: 'ผลงานเเละงานวิจัย', href: '#', current: false },
+  { name: 'คณาจารย์', href: '#', current: false },
 ]
 
 // eslint-disable-next-line require-jsdoc
@@ -20,6 +18,7 @@ function classNames(...classes: string[]) {
 }
 
 const Navbar = () => {
+  const current = 'ผลงานเเละงานวิจัย'
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -49,7 +48,7 @@ const Navbar = () => {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current
+                          item.name === current
                             ? 'bg-gray-900 text-white'
                             : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                           'px-3 py-2 rounded-md text-sm font-medium'
@@ -76,7 +75,7 @@ const Navbar = () => {
                   <div>
                     <Menu.Button className="flex text-sm bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                       <span className="sr-only">Open user menu</span>
-                      {/* image */}
+                      <div className="text-white">test</div>
                     </Menu.Button>
                   </div>
                   <Transition

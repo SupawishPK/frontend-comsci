@@ -10,6 +10,11 @@ module.exports = {
       xl: '1280px',
       '2xl': '1536px',
     },
+    extend: {
+      fontFamily: {
+        body: ['Kanit', 'sans-serif'],
+      },
+    },
   },
   variants: {
     extend: {},
