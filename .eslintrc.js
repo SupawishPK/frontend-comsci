@@ -14,7 +14,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    'spaced-comment': ['error', 'always'],
+    'spaced-comment': ['error', 'always', { markers: ['/'] }],
   },
   settings: {
     react: {
