@@ -1,7 +1,7 @@
-import type { NextPage } from "next";
-import React from "react";
-import Head from "next/head";
-import Navbar from "../components/compose/Navbar";
+import type { NextPage } from 'next'
+import React from 'react'
+import Head from 'next/head'
+import Navbar from '../components/compose/Navbar'
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
