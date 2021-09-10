@@ -2,6 +2,12 @@ import type { NextPage } from 'next'
 import React from 'react'
 import Head from 'next/head'
 import Navbar from '../components/compose/Navbar'
+import News from '../components/compose/News'
+import Pagination from '../components/core/Pagination'
+import { products } from '../mocks/news'
+import Header from '../components/compose/Header'
+import Banner from '../components/compose/Banner'
+import Footer from '../components/compose/Footer'
 
 const Home: NextPage = () => {
   return (
@@ -12,9 +18,18 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+
+      <Header />
+
       <main>
-        <div>index</div>
+        <Banner />
+
+        <News products={products} />
+
+        <Pagination />
       </main>
+
+      <Footer />
     </div>
   )
 }
