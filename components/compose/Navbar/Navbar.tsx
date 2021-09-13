@@ -13,9 +13,9 @@ const user = {
 }
 
 const navigation = [
-  { name: 'หน้าหลัก', href: '#', current: true },
-  { name: 'ผลงานเเละงานวิจัย', href: '#', current: false },
-  { name: 'คณาจารย์', href: '#', current: false },
+  { name: 'หน้าหลัก', href: '/', current: true },
+  { name: 'ผลงานและงานวิจัย', href: '/thesis', current: false },
+  { name: 'คณาจารย์', href: '/teachers', current: false },
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
@@ -28,8 +28,9 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-const Navbar = () => {
-  const current = 'ผลงานเเละงานวิจัย'
+const Navbar: React.FunctionComponent<{ currentPage: string }> = ({
+  currentPage,
+}) => {
   return (
     <div>
       <Disclosure as="nav" className="bg-gray-800">
@@ -54,7 +55,7 @@ const Navbar = () => {
                           key={item.name}
                           href={item.href}
                           className={classNames(
-                            item.name === current
+                            item.name === currentPage
                               ? 'bg-gray-900 text-white'
                               : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                             'px-3 py-2 rounded-md text-sm font-medium'
